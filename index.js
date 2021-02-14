@@ -19,8 +19,12 @@ const render = require("./lib/htmlRenderer");
 const emptyArray = [];
 
 // questions for different teams members:
+// Header:
+
 
 // Manager: 
+
+
 const managerInput = [
 
     {
@@ -47,6 +51,7 @@ const managerInput = [
         message: 'Enter Managers Office Number [format (999) 999-9999]: '
     },
 ]
+
 
 //Engineer: 
 const engineerInput = [
@@ -104,14 +109,14 @@ const internInput = [
     },
 ]
 
-//this question will promt the user if they want to add another employee
+//this question will Prompt the user if they want to add another employee
 
-const anotherOne = [
+const addLoop = [
     {
         type: 'list',
         name: 'nextEmployee',
-        message: 'Select the type of team member you would like to add next, if you are done select "Done" to generate your team ',
-        choices: ['Engineer', 'Intern', 'Done']
+        message: 'Choose the next employee to add to your team. If there is no more, select Done: ',
+        choices: ['Done', 'Engineer', 'Intern']
     }
 ]
 // end of questions 
@@ -119,31 +124,31 @@ const anotherOne = [
 
 //starting function - begins with manager because each team will always have a manager 
 function init() {
-        //starts with the manager function
-        managerPromt();
+    //starts with the manager function
+    managerPrompt();
+
 }
-
-
-//function that will promt the user to select the next type of employee they are adding 
+//function that will Prompt the user to select the next type of employee they are adding 
 function next() {
-    inquirer.prompt(anotherOne).then((response) => {
+    inquirer.prompt(addLoop).then((response) => {
         
         console.log(response);
         switch (response.nextEmployee) {
             case 'Engineer':
-                engineerPromt();
+                engineerPrompt();
                 break;
             case 'Intern':
-                internPromt();
+                internPrompt();
                 break;
             case 'Done':
-                console.log('Creating your team!')
-                makeTeam();
+                console.log('Generating your profile!')
+                finalizeTeam();
         }
     })
 }
+
 //function for the manager questions that will be called first when initiated
-function managerPromt() {
+function managerPrompt() {
     inquirer.prompt(managerInput).then((response) => {
 
         let name = response.managerName;
@@ -154,14 +159,14 @@ function managerPromt() {
         const manager = new Manager(name, id, email, officePhone);
         //pushes the new manager object to the empty array to be used later 
         emptyArray.push(manager);
-        //this will call the next function which will promt the user to select the next type of employee they are adding 
+        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
         console.log(emptyArray);
 
         next();
     })
 }
-//Function for Engineer promts
-function engineerPromt() {
+//Function for Engineer Prompts
+function engineerPrompt() {
     inquirer.prompt(engineerInput).then((response) => {
 
         let name = response. engName;
@@ -173,13 +178,13 @@ function engineerPromt() {
 
         emptyArray.push(engineer);
         console.log(emptyArray);
-        //this will call the next function which will promt the user to select the next type of employee they are adding 
+        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
         next();
     })
 }
 
-//Function for Intern promts
-function internPromt() {
+//Function for Intern Prompts
+function internPrompt() {
     inquirer.prompt(internInput).then((response) => {
 
         let name = response. internName;
@@ -192,13 +197,13 @@ function internPromt() {
         emptyArray.push(intern);
         console.log(emptyArray);
 
-        //this will call the next function which will promt the user to select the next type of employee they are adding 
+        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
         next();
     })
 }
 
 //function to make the file 
-function makeTeam() {
+function finalizeTeam() {
 fs.writeFile(renderedPath, render(emptyArray), function(err) {
 if (err) { 
     return console.log(err)
