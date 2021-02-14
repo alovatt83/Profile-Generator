@@ -1,4 +1,4 @@
-// Dependencies 
+// Static Assigned Dependencies 
 const Employee = require("./lib/Employee.js");
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
@@ -12,19 +12,15 @@ const renderedPath = path.join(renderedDir, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// Start of Code
 
-//-------------------------------------------------------------------------------------------------------------------------
-
-//empty array that can store the team members in, Name ID and Email are in every array becase each array becasue that information is prevalent to every employee 
+// 'Empty Array' setup to store input from inquirer inputs. 
 const emptyArray = [];
 
-// questions for different teams members:
-// Header:
+// Inquirer questions to display seeking user input.
 
 
-// Manager: 
-
-
+// Manager Input
 const managerInput = [
 
     {
@@ -53,7 +49,7 @@ const managerInput = [
 ]
 
 
-//Engineer: 
+//Engineer Input
 const engineerInput = [
 
     {
@@ -81,7 +77,7 @@ const engineerInput = [
     },
 ]
 
-//Intern:
+//Intern Input
 const internInput = [
 
     {
@@ -109,8 +105,7 @@ const internInput = [
     },
 ]
 
-//this question will Prompt the user if they want to add another employee
-
+// Add 'list' question for user to add addition emplyees or complete the inquirer process.
 const addLoop = [
     {
         type: 'list',
@@ -119,16 +114,16 @@ const addLoop = [
         choices: ['Done', 'Engineer', 'Intern']
     }
 ]
-// end of questions 
 
 
-//starting function - begins with manager because each team will always have a manager 
+// Initiate questions.
 function init() {
-    //starts with the manager function
+
+    // Start inquirer with manager questions.
     managerPrompt();
 
 }
-//function that will Prompt the user to select the next type of employee they are adding 
+// Control function to allow users to add additional employees or end process. 
 function next() {
     inquirer.prompt(addLoop).then((response) => {
         
@@ -147,7 +142,7 @@ function next() {
     })
 }
 
-//function for the manager questions that will be called first when initiated
+// Function for calling the 'Manager' questions.
 function managerPrompt() {
     inquirer.prompt(managerInput).then((response) => {
 
@@ -155,17 +150,17 @@ function managerPrompt() {
         let id = response.managerID;
         let email = response.managerEmail;
         let officePhone = response.officePhone;
-        // creats an object for this manager 
+        // Generate Object for 'Manager' inquirer input.
         const manager = new Manager(name, id, email, officePhone);
-        //pushes the new manager object to the empty array to be used later 
+        // Direct input to empty array.
         emptyArray.push(manager);
-        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
+        
         console.log(emptyArray);
-
+        // Move user to select 'nextEmployee'
         next();
     })
 }
-//Function for Engineer Prompts
+//  Function for calling the 'Engineer' questions.
 function engineerPrompt() {
     inquirer.prompt(engineerInput).then((response) => {
 
@@ -173,17 +168,17 @@ function engineerPrompt() {
         let id = response.engID;
         let email = response.engEmail;
         let github = response.engGithub;
-        // creats an object for this manager 
+        // Generate Object for 'Engineer'' inquirer input.        
         const engineer = new Engineer (name, id, email, github);
 
         emptyArray.push(engineer);
         console.log(emptyArray);
-        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
+        // Move user to select 'nextEmployee'
         next();
     })
 }
 
-//Function for Intern Prompts
+// Function for calling the 'Intern' questions.
 function internPrompt() {
     inquirer.prompt(internInput).then((response) => {
 
@@ -191,18 +186,17 @@ function internPrompt() {
         let id = response.internID;
         let email = response.internEmail;
         let internSchool = response.internSchool;
-
+        // Generate Object for 'Intern' inquirer input.        
         const intern = new Intern (name, id, email, internSchool);
 
         emptyArray.push(intern);
         console.log(emptyArray);
-
-        //this will call the next function which will Prompt the user to select the next type of employee they are adding 
+        // Move user to select 'nextEmployee'        
         next();
     })
 }
 
-//function to make the file 
+// Finalize and Create file.
 function finalizeTeam() {
 fs.writeFile(renderedPath, render(emptyArray), function(err) {
 if (err) { 
@@ -212,7 +206,7 @@ if (err) {
 
 }
 
-//calls the initiating function 
+// Call the functions.
 init();
 
 
