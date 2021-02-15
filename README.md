@@ -23,7 +23,7 @@ Install Node> execute in terminal: npm i > execute in terminal: node index.js
 Quickly compile an html document that contains detailed information about your team members. Enter information about your team manager, engineers or interns.
 
 ## Screenshot
-[![Watch the video](https://media.giphy.com/media/b13zVNTKH1bdV5vTfZ/giphy.gif)](https://youtu.be/WBVYaun3JnU)<br />
+[![Watch the video](https://media.giphy.com/media/yAqwbYxEAy3ZoUMh4h/giphy.gif)](https://www.youtube.com/watch?v=xXh7uRH9ukA)<br />
 Click on the GIF to redirect to HD video.
 
 
