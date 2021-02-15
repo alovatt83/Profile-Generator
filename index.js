@@ -89,7 +89,7 @@ const internInput = [
     {
         type: 'input',
         name: 'internID',
-        message: 'Enter interns ID#: ',
+        message: 'Enter interns ID#: '
     },
 
     {
@@ -101,7 +101,7 @@ const internInput = [
     {
         type: 'input',
         name: 'internSchool',
-        message: 'Enter the interns current academic enrollment: ',
+        message: 'Enter the interns current academic enrollment: '
     },
 ]
 
