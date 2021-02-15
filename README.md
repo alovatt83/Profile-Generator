@@ -38,7 +38,7 @@ This application is not covered under any coding licenses.
 Visit our repository and request access to contribute.
 
 ## Technologies
-HTML | CSS| JavaScript | NODE | Inquirer | Jest
+HTML | CSS | JavaScript | NODE | Inquirer | Jest
 
 ## Testing
 Tested on macOS Big Sur
