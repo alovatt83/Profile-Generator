@@ -12,7 +12,7 @@ Automatically generate Team Profile HTML pages.
 - [Deployed](#deployed)
 - [License](#license)
 - [Contributing](#contributing)
-- [Technologies](technologies)
+- [Technologies](#technologies)
 - [Testing](#testing)
 - [Questions](#questions)
 - [Contact](#contact)
