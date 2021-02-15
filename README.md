@@ -12,6 +12,7 @@ Automatically generate Team Profile HTML pages.
 - [Deployed](#deployed)
 - [License](#license)
 - [Contributing](#contributing)
+- [Technologies](technologies)
 - [Testing](#testing)
 - [Questions](#questions)
 - [Contact](#contact)
@@ -35,6 +36,9 @@ This application is not covered under any coding licenses.
 
 ## Contributing
 Visit our repository and request access to contribute.
+
+## Technologies
+HTML | CSS| JavaScript | NODE | Inquirer | Jest
 
 ## Testing
 Tested on macOS Big Sur
