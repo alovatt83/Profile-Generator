@@ -28,6 +28,7 @@ Quickly compile an html document that contains detailed information about your t
 <br>
 <br>
 <h3 align="center">Walkthrough Video</h3><br>
+
 [![Watch the video](https://media.giphy.com/media/yAqwbYxEAy3ZoUMh4h/giphy.gif)](https://www.youtube.com/watch?v=xXh7uRH9ukA)<br />
 Click on the GIF to redirect to HD video.
 <br>
