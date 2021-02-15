@@ -26,11 +26,11 @@ Quickly compile an html document that contains detailed information about your t
 ## Screenshot
 ![Screenshot](./assets/images/screenshot.png)
 <br>
+<br>
+Walkthrough video below.
 [![Watch the video](https://media.giphy.com/media/yAqwbYxEAy3ZoUMh4h/giphy.gif)](https://www.youtube.com/watch?v=xXh7uRH9ukA)<br />
 Click on the GIF to redirect to HD video.
 <br>
-![Screenshot](./assets/images/screenshot.png)
-
 ## Deployed
 https://github.com/alovatt83/portfolio-generator
 
